@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //import Students from "./components/Home";
 import Home from "./components/Home";
 import Teachers from "./components/Teachers";
-import TeacherAction from "./components/Teacheraction";
+import Teacheraction from "./components/Teacheraction";
 import Provider from "./Provider";
 
 function App() {
@@ -18,16 +18,16 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
-              path="/Teachers"
+              path="/teachers"
               element={<Teachers  />}
             />
             <Route path="/action/" element={<Action />} />
             <Route
               path="/teacheraction/"
-              element={<TeacherAction />}
+              element={<Teacheraction />}
             />
             <Route path="/action/:id" element={<Action />} />
-            <Route path="/teacheraction/:id" element={<TeacherAction />} />
+            <Route path="/teacheraction/:id" element={<Teacheraction />} />
           </Routes>
         </div>
       </Provider>
