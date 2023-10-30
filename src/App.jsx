@@ -1,7 +1,7 @@
 import Sidebar from "./components/sidebar/Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Action from "./components/Action";
-import { useState, useEffect } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 //import Students from "./components/Home";
 import Home from "./components/Home";
