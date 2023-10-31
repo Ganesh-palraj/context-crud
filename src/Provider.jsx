@@ -85,8 +85,8 @@ function Provider(props) {
   };
 
   const addOrUpdateTeachers = ({
-    formValues,
-    setFormValues,
+    teacherFormValues,
+    setTeacherFormValues,
     id,
     teacherInitialData,
   }) => {
@@ -96,10 +96,10 @@ function Provider(props) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formValues),
+        body: JSON.stringify(teacherFormValues),
       }).then((res) => {
         getTeachers();
-        setFormValues(teacherInitialData);
+        setTeacherFormValues(teacherInitialData);
       });
 
       nav(-1);
@@ -109,10 +109,10 @@ function Provider(props) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formValues),
+        body: JSON.stringify(teacherFormValues),
       }).then((res) => {
         getTeachers();
-        setFormValues(teacherInitialData);
+        setTeacherFormValues(teacherInitialData);
       });
 
       nav(-1);
