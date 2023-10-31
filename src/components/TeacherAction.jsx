@@ -4,7 +4,7 @@ import Context from "../Context";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 
-const TeacherAction = () => {
+const Teacheraction = () => {
 
     const contextData = useContext(Context);
     console.log(contextData.usersData)
@@ -77,15 +77,19 @@ const TeacherAction = () => {
         <Input
           type="text"
           name="avatar"
+          id="image"
+          autoComplete="image"
           value={formValues.avatar}
           onChange={handleChange}
           disabled={state.isView === "true" ? true : false}
         />
 
-        <label htmlFor="text">Name</label>
+        <label htmlFor="name">Name</label>
         <Input
           type="text"
-          name="name"
+          name="name" 
+          autoComplete="image"
+          id="name"
           value={formValues.name}
           disabled={state.isView === "true" ? true : false}
           onChange={handleChange}
@@ -95,6 +99,8 @@ const TeacherAction = () => {
         <Input
           type="text"
           name="teachingsubject"
+          autoComplete="image"
+          id="teachingsubject"
           value={formValues.teachingsubject}
           onChange={handleChange}
           disabled={state.isView === "true" ? true : false}
@@ -104,6 +110,8 @@ const TeacherAction = () => {
         <Input
           type="text"
           name="schoolname"
+          autoComplete="image"
+          id="schoolname"
           value={formValues.schoolname}
           onChange={handleChange}
           disabled={state.isView === "true" ? true : false}
@@ -112,13 +120,14 @@ const TeacherAction = () => {
         <Button
           color="success"
           className="actionButton"
+          id="teachersubmit"
           onClick={handleSubmit}
           disabled={state.isView === "true" ? true : false}
         >
           submit{" "}
         </Button>
 
-        <Button color="danger" className="actionButton" onClick={() => nav(-1)}>
+        <Button color="danger" id="teachercancel" className="actionButton" onClick={() => nav(-1)}>
           cancel
         </Button>
       </form>
@@ -126,4 +135,4 @@ const TeacherAction = () => {
   );
 };
 
-export default TeacherAction;
+export default Teacheraction;
