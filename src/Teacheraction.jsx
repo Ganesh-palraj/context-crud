@@ -1,6 +1,6 @@
 import React, { useEffect, useState , useContext } from "react";
 import { Input, Button } from "reactstrap";
-import Context from "../Context";
+import Context from "./Context";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ const Teacheraction = () => {
     schoolname: "",
   };
 
-  const [formValues, setFormValues] = useState(teacherInitialData);
+  const [teacherFormValues, setTeacherFormValues] = useState(teacherInitialData);
 
   const nav = useNavigate();
 
@@ -30,16 +30,16 @@ const Teacheraction = () => {
       fetch("https://653e77be9e8bd3be29df5758.mockapi.io/teacher/" + id)
         .then((data) => data.json())
 
-        .then((res) => setFormValues(res));
+        .then((res) => setTeacherFormValues(res));
     }
   }, [id]);
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: [e.target.value] });
+    setTeacherFormValues({ ...teacherFormValues, [e.target.name]: [e.target.value] });
   };
 
   const handleSubmit = () => {
-    contextData.addOrUpdateTeachers({ formValues , setFormValues , id , teacherInitialData })
+    contextData.addOrUpdateTeachers({ teacherFormValues , setTeacherFormValues , id , teacherInitialData })
     // if (id) {
     //   fetch("https://653e77be9e8bd3be29df5758.mockapi.io/teacher/" + id, {
     //     method: "PUT",
@@ -79,7 +79,7 @@ const Teacheraction = () => {
           name="avatar"
           id="image"
           autoComplete="image"
-          value={formValues.avatar}
+          value={teacherFormValues.avatar}
           onChange={handleChange}
           disabled={state.isView === "true" ? true : false}
         />
@@ -90,7 +90,7 @@ const Teacheraction = () => {
           name="name" 
           autoComplete="image"
           id="name"
-          value={formValues.name}
+          value={teacherFormValues.name}
           disabled={state.isView === "true" ? true : false}
           onChange={handleChange}
         />
@@ -101,7 +101,7 @@ const Teacheraction = () => {
           name="teachingsubject"
           autoComplete="image"
           id="teachingsubject"
-          value={formValues.teachingsubject}
+          value={teacherFormValues.teachingsubject}
           onChange={handleChange}
           disabled={state.isView === "true" ? true : false}
         />
@@ -112,7 +112,7 @@ const Teacheraction = () => {
           name="schoolname"
           autoComplete="image"
           id="schoolname"
-          value={formValues.schoolname}
+          value={teacherFormValues.schoolname}
           onChange={handleChange}
           disabled={state.isView === "true" ? true : false}
         />

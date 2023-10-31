@@ -1,10 +1,10 @@
-import Sidebar from "./components/sidebar/Sidebar";
+import Sidebar from "./Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Action from "./components/Action"
+import Action from "./Action"
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "./components/Home";
-import Teachers from "./components/Teachers";
-import Teacheraction from "./components/Teacheraction"
+import Home from "./Home";
+import Teachers from "./Teachers";
+import Teacheraction from "./Teacheraction"
 import Provider from "./Provider";
 
 function App() {

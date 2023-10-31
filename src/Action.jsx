@@ -1,7 +1,7 @@
 import React, { useEffect, useState , useContext} from "react";
 import { Input, Button } from "reactstrap";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import Context from "../Context";
+import Context from "./Context";
 
 
 const Action = () => {
